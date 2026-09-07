@@ -1,0 +1,170 @@
+/* form.css
+   Print layout for the Criminal Risk Assessment Request.
+   The physical page margins (top/bottom, to make room for the PDF engine's
+   native header/footer) are set from render.js via page.pdf({margin}) --
+   this stylesheet only controls the content that sits inside that safe area. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10.5px;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.page {
+  padding: 0 4px;
+}
+
+.consent-box {
+  border: 1px solid #333;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+.consent-text {
+  margin: 0 0 10px 0;
+  text-align: justify;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+table.consent-signoff {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.consent-signoff td {
+  padding: 4px 8px 4px 0;
+  vertical-align: bottom;
+}
+
+.print-clearly {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+table.field-grid {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 6px;
+}
+
+table.field-grid td {
+  padding: 5px 10px 5px 0;
+  vertical-align: bottom;
+  border-bottom: 1px solid #999;
+}
+
+.col-60 { width: 60%; }
+.col-40 { width: 40%; }
+
+.field {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.field-wide {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid #999;
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.field-label {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.field-value {
+  flex: 1;
+  min-height: 1.2em;
+  border-bottom: 1px dotted transparent; /* keeps baseline consistent even when empty */
+}
+
+.id-verification {
+  margin-top: 10px;
+}
+
+.id-note {
+  background: #fde9d9;
+  padding: 6px 8px;
+  margin: 0 0 6px 0;
+}
+
+table.checkbox-grid {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.checkbox-grid td {
+  padding: 3px 0;
+}
+
+.checkbox-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 18px;
+}
+
+.checkbox-item .box {
+  font-size: 13px;
+}
+
+.checkbox-item .box.checked {
+  font-weight: bold;
+}
+
+.small-note {
+  font-size: 9px;
+  color: #444;
+  margin: 2px 0 12px 0;
+}
+
+.legal-text {
+  text-align: justify;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.required-note {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.reason-block {
+  margin-bottom: 8px;
+}
+
+.reason-options {
+  margin-top: 4px;
+  padding-left: 12px;
+}
+
+.reason-options .checkbox-item {
+  display: block;
+  margin: 3px 0;
+}
+
+.warning {
+  background: #fbe1e1;
+  border: 1px solid #c0392b;
+  color: #7a2020;
+  padding: 6px 8px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.final-note {
+  font-weight: bold;
+  margin-top: 16px;
+}

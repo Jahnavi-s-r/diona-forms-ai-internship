@@ -1,0 +1,14 @@
+//- Same deal as header-template.pug: rendered into the PDF engine's native
+//- `footerTemplate` frame. The `pageNumber` / `totalPages` class names are
+//- reserved words the engine substitutes at render time - that is the
+//- mechanism that produces real, dynamic page numbers (not something we
+//- compute ourselves).
+div(style="width:100%; font-size:9px; padding:0 38px; box-sizing:border-box; font-family:Helvetica,Arial,sans-serif; color:#333;")
+  hr(style="border:none; border-top:1px solid #333; margin:0 0 4px 0;")
+  table(style="width:100%;")
+    tr
+      td(style="text-align:left;") Criminal Risk Assessment Request &nbsp;&nbsp; Revision date: #{revisionDate}
+      td(style="text-align:right;")
+        span.pageNumber
+        | &nbsp;of&nbsp;
+        span.totalPages

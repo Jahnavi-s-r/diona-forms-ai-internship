@@ -1,0 +1,37 @@
+{
+  "_description": "Consented case, reason = Place of Safety (a reason that requires consent) -- everything lines up, so no warning banner should appear.",
+  "consent": {
+    "status": "consented",
+    "date": "2026-09-05",
+    "witnessName": "P. Reyes",
+    "signatureLabel": "J. Thompson (signed)"
+  },
+  "identity": {
+    "firstName": "Jordan",
+    "secondName": "Lee",
+    "lastName": "Thompson",
+    "dateOfBirth": "1990-04-12",
+    "gender": "female",
+    "otherLastNames": "",
+    "otherFirstNames": "Jordy",
+    "currentAddress": "455 Portage Ave, Winnipeg, MB R3B 2H2",
+    "currentPhone": "(204) 555-0142",
+    "birthPlace": "Winnipeg, Manitoba"
+  },
+  "idVerification": {
+    "types": ["mb_dl", "mb_health_card"],
+    "otherSpecify": "",
+    "mbDlLicenceNumber": "TH-OM-PS-O412AB"
+  },
+  "request": {
+    "agencyName": "Winnipeg Child and Family Services",
+    "reason": "place_of_safety",
+    "assignedWorker": "R. Singh",
+    "lastAssessmentDate": "2023-02-18",
+    "submittingDesignate": "A. Chowdhury",
+    "designatePhone": "(204) 555-0199",
+    "designateEmail": "a.chowdhury@wcfs.example.org",
+    "designateFax": "(204) 555-0100",
+    "requestDate": "2026-09-05"
+  }
+}

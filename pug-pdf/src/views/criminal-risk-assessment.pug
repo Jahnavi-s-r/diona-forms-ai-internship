@@ -1,0 +1,100 @@
+doctype html
+include mixins/form-mixins.pug
+html
+  head
+    meta(charset="UTF-8")
+    title Criminal Risk Assessment Request
+    style!= cssContent
+  body
+    //- ============================ PAGE 1 ============================
+    section.page
+      div.consent-box
+        p.consent-text= consentText
+
+        table.consent-signoff
+          tr
+            td
+              +field("Date:", vm.consent.dateFormatted)
+            td
+              +field("Signature of person being assessed:", vm.consent.isConsented ? vm.consent.signatureLabel : "")
+          tr
+            td
+              +checkbox(vm.consent.isUnconsented, "Unconsented")
+            td
+              +field("Witness (if consenting):", vm.consent.witnessName)
+
+      p.print-clearly PLEASE PRINT CLEARLY
+
+      table.field-grid
+        tr
+          td.col-60: +field("1. First Name:", vm.identity.firstName)
+          td.col-40: +field("2. Second Name:", vm.identity.secondName)
+        tr
+          td(colspan="2"): +field("3. Last Name:", vm.identity.lastName, true)
+        tr
+          td.col-60: +field("4. Date of Birth (dd/mm/yyyy):", vm.identity.dateOfBirthFormatted)
+          td.col-40
+            +checkbox(vm.identity.isMale, "Male")
+            +checkbox(vm.identity.isFemale, "Female")
+        tr
+          td(colspan="2"): +field("6. Other Last Names Used:", vm.identity.otherLastNames, true)
+        tr
+          td(colspan="2"): +field("7. Other First Names Used/Also Goes By:", vm.identity.otherFirstNames, true)
+        tr
+          td(colspan="2"): +field("8. Current Address (include postal code):", vm.identity.currentAddress, true)
+        tr
+          td.col-60: +field("9. Current Phone Number(s):", vm.identity.currentPhone)
+          td.col-40: +field("10. City/Province or Country of Birth:", vm.identity.birthPlace)
+
+      div.id-verification
+        p.id-note
+          strong *PLEASE NOTE:
+          |  Subject's name must be identified with TWO PIECES OF IDENTIFICATION (MB D/L &amp; photo ID is preferable):
+        table.checkbox-grid
+          tr
+            td: +checkbox(vm.idVerification.hasBirthCertificate, "Birth Certificate")
+            td: +checkbox(vm.idVerification.hasSinCard, "Social Insurance Card")
+          tr
+            td: +checkbox(vm.idVerification.hasMbHealthCard, "Manitoba Health Card")
+            td: +checkbox(vm.idVerification.hasTreatyCard, "Treaty Card")
+          tr
+            td(colspan="2"): +checkbox(vm.idVerification.hasOther, "Other (specify): " + vm.idVerification.otherSpecify)
+          tr
+            td(colspan="2"): +checkbox(vm.idVerification.hasMbDl, "MB Driver's Licence with Photo - licence number (section 4d on licence): " + vm.idVerification.mbDlLicenceNumber)
+
+        if !vm.idVerification.meetsTwoIdRequirement
+          p.warning ⚠ Fewer than two pieces of identification are on file for this request.
+
+    //- ============================ PAGE 2 ============================
+    section.page(style="page-break-before: always;")
+      +field("Name of Person Being Assessed:", vm.identity.fullName, true)
+      p.small-note *Must match information on page 1 &mdash; populated automatically from page 1's First/Last Name.
+
+      p.legal-text= page2LegalText
+
+      p.required-note NOTE &ndash; SECTIONS MARKED WITH AN ASTERISK (*) ARE REQUIRED
+
+      +field("*Name of Agency Submitting Request:", vm.request.agencyName, true)
+
+      div.reason-block
+        span.field-label *Reason for Risk Assessment:
+        div.reason-options
+          +checkbox(vm.request.isChildProtectionConcerns, "Child Protection Concerns (with or without consent)")
+          +checkbox(vm.request.isPlaceOfSafety, "Place of Safety (consent required)")
+          +checkbox(vm.request.isKinshipCustomaryCare, "Kinship or Customary Care Agreement (consent required)")
+
+      if vm.request.showConsentWarning
+        p.warning ⚠ This reason requires consent, but page 1 records the person as "Unconsented". Please confirm before submitting.
+
+      +field("*Assigned Worker:", vm.request.assignedWorker, true)
+      +field("Date of Last Criminal Risk Assessment (if known):", vm.request.lastAssessmentDateFormatted, true)
+      +field("*Submitting Designate:", vm.request.submittingDesignate, true)
+
+      table.field-grid
+        tr
+          td.col-60: +field("*Designate Phone Number:", vm.request.designatePhone)
+          td.col-40: +field("*Designate Email:", vm.request.designateEmail)
+      +field("Designate Fax Number:", vm.request.designateFax, true)
+      +field("*Request Date:", vm.request.requestDateFormatted, true)
+
+      p.final-note= finalNoteText

@@ -1,0 +1,17 @@
+//- Reusable building blocks used by criminal-risk-assessment.pug.
+//- Keeping these as mixins means every field/checkbox on the page is drawn
+//- through the same two functions, so the layout stays consistent even
+//- though the data driving each row is different every time.
+
+mixin field(label, value, wide)
+  div.field(class=wide ? 'field-wide' : '')
+    span.field-label #{label}
+    span.field-value= value || ''
+
+mixin checkbox(isChecked, label)
+  span.checkbox-item
+    span.box(class=isChecked ? 'checked' : '')= isChecked ? '☑' : '☐'
+    span.box-label #{label}
+
+mixin sectionTitle(text)
+  div.section-title #{text}

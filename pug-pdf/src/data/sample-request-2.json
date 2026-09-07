@@ -1,0 +1,37 @@
+{
+  "_description": "Unconsented case, reason = Kinship or Customary Care Agreement (a reason that requires consent). This SHOULD trigger the dynamic warning banner on page 2, and no signature/witness fields should print on page 1.",
+  "consent": {
+    "status": "unconsented",
+    "date": "2026-09-06",
+    "witnessName": "",
+    "signatureLabel": ""
+  },
+  "identity": {
+    "firstName": "Avery",
+    "secondName": "",
+    "lastName": "Boulanger",
+    "dateOfBirth": "1985-11-30",
+    "gender": "male",
+    "otherLastNames": "Whitecloud",
+    "otherFirstNames": "",
+    "currentAddress": "12 Selkirk Ave, Winnipeg, MB R2W 2K5",
+    "currentPhone": "(204) 555-0177",
+    "birthPlace": "Brandon, Manitoba"
+  },
+  "idVerification": {
+    "types": ["birth_certificate", "sin_card", "other"],
+    "otherSpecify": "Provincial Nominee Certificate",
+    "mbDlLicenceNumber": ""
+  },
+  "request": {
+    "agencyName": "Southern First Nations Network of Care",
+    "reason": "kinship_customary_care",
+    "assignedWorker": "M. Fontaine",
+    "lastAssessmentDate": "",
+    "submittingDesignate": "K. Okafor",
+    "designatePhone": "(204) 555-0133",
+    "designateEmail": "k.okafor@sfnnc.example.org",
+    "designateFax": "",
+    "requestDate": "2026-09-06"
+  }
+}

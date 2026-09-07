@@ -1,0 +1,13 @@
+{
+  "name": "criminal-risk-assessment-pdf",
+  "version": "1.0.0",
+  "description": "Generates the Manitoba Families Criminal Risk Assessment Request as a dynamic, print-accurate PDF from Pug HTML templates.",
+  "private": true,
+  "scripts": {
+    "render": "node src/scripts/render.js"
+  },
+  "dependencies": {
+    "pug": "^3.0.3",
+    "playwright-core": "^1.48.0"
+  }
+}

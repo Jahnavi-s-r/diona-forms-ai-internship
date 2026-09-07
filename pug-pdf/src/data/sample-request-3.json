@@ -1,0 +1,37 @@
+{
+  "_description": "Consented case, reason = Child Protection Concerns (a reason that does NOT require consent), several optional fields left blank on purpose to show the template does not print the literal word 'undefined' or break its layout when data is missing.",
+  "consent": {
+    "status": "consented",
+    "date": "2026-09-07",
+    "witnessName": "",
+    "signatureLabel": "S. Nakamura (signed)"
+  },
+  "identity": {
+    "firstName": "Sam",
+    "secondName": "",
+    "lastName": "Nakamura",
+    "dateOfBirth": "2001-01-22",
+    "gender": "male",
+    "otherLastNames": "",
+    "otherFirstNames": "",
+    "currentAddress": "88 Assiniboine Ave, Winnipeg, MB R3C 0Y1",
+    "currentPhone": "(204) 555-0111",
+    "birthPlace": "Winnipeg, Manitoba"
+  },
+  "idVerification": {
+    "types": ["mb_health_card", "treaty_card"],
+    "otherSpecify": "",
+    "mbDlLicenceNumber": ""
+  },
+  "request": {
+    "agencyName": "Winnipeg Child and Family Services",
+    "reason": "child_protection_concerns",
+    "assignedWorker": "L. Bergeron",
+    "lastAssessmentDate": "",
+    "submittingDesignate": "L. Bergeron",
+    "designatePhone": "(204) 555-0188",
+    "designateEmail": "l.bergeron@wcfs.example.org",
+    "designateFax": "",
+    "requestDate": "2026-09-07"
+  }
+}

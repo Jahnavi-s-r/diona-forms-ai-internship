@@ -1,0 +1,5 @@
+Warnings:
+[row : 6] Use the max-pixels parameter to speed up submission sending and save storage space. Learn more: https://xlsform.org/#image
+ODK Validate Warnings:
+
+Conversion complete!

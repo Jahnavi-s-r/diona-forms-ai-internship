@@ -1,0 +1,17 @@
+//- This file is compiled SEPARATELY from the main form template and its
+//- HTML output is handed to the PDF engine's native `headerTemplate` option
+//- (Playwright/Puppeteer inject this into a special isolated header frame,
+//- repeated automatically on every physical page - that's what makes the
+//- logo + title reappear on page 2 without the form template repeating it).
+//-
+//- Only inline styles work here (no external stylesheet is loaded into this
+//- frame), and the container must set font-size explicitly - the frame does
+//- not inherit from the main document.
+div(style="width:100%; font-size:9px; padding:0 38px; box-sizing:border-box;")
+  table(style="width:100%; border-collapse:collapse;")
+    tr
+      td(style="width:70px; vertical-align:middle;")
+        img(src=logoDataUri style="width:60px;")
+      td(style="vertical-align:middle; text-align:right; font-family:Helvetica,Arial,sans-serif;")
+        div(style="font-size:15px; font-weight:bold; color:#1a1a1a;") CRIMINAL RISK ASSESSMENT REQUEST
+  hr(style="border:none; border-top:1px solid #333; margin:4px 0 0 0;")
