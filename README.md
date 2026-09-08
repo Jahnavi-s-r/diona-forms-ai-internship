@@ -1,7 +1,9 @@
 # Diona Forms & AI Intern — Take-Home Assignment
 
-**Candidate:** Amogh
+**Candidate:** Jahnavi Srinath
 **Source document:** `Criminal Risk Assessment Request` (Manitoba Families, Child Protection Branch — revision date 2025-01-10)
+video 1: https://www.loom.com/share/6c243d2442344af29bd92266004588b9
+video 2: https://www.loom.com/share/f66952f2d2714a69a9243240c43a6b55
 
 This repository contains both exercises from the assignment:
 
